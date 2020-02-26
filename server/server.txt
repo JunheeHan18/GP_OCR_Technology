@@ -85,6 +85,36 @@ app.post('/user/login', function (req, res) {
         });
     })
 });
+
+//변환 텍스트 저장 로직
+app.post('/user/text/save', function (req, res) {
+    console.log(req.body);
+    var title = req.body.title;
+    var content = req.body.content;
+
+    // 삽입을 수행하는 sql문.
+    var sql = 'INSERT INTO bookmark (title,content,save_date) VALUES (?, ?,CURRENT_DATE())';
+    var params = [title, content];
+
+    // sql 문의 ?는 두번째 매개변수로 넘겨진 params의 값으로 치환된다.
+    connection.query(sql, params, function (err, result) {
+        var resultCode = 404;
+        var message = '에러가 발생했습니다';
+
+        if (err) {
+            console.log(err);
+        } else {
+            resultCode = 200;
+            message = '텍스트 저장에 성공했습니다.';
+        }
+
+        res.json({
+            'code': resultCode,
+            'message': message
+        });
+    });
+});
+
 // 여기까지 http express 통신
 
 //여기서 부터 소켓 통신
