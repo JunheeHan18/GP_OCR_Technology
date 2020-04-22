@@ -4,6 +4,8 @@ var bodyParser = require('body-parser');
 var app = express();
 var http = require('http').Server(app); 
 var io = require('socket.io')(http);
+var transData = null;
+var {PythonShell}=require('python-shell');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -137,7 +139,14 @@ io.sockets.on('connection', function (socket){
      /*받은 메세지를 되돌려 주자. 
      아니면 받은 데이터를 이용 라즈베리파에서 뭐든 할 수 있다. 
      */ 
-     socket.emit('message_from_server', '독서모드로 변경되었습니다.'); 
+     socket.emit('message_from_server', '독서모드로 변경되었습니다.');
+     var pyshell = new PythonShell('python_client.py');
+     pyshell.send(msg);
+     pyshell.on('message', function (data) {
+     console.log(data);
+     socket.emit('text_from_raspi', data);
+     });
+
    });
 
 //상태모드 일상모드가 들어 오면 응답 
