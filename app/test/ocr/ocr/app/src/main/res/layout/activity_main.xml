@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btn_normalmode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="일상모드"/>
+
+    <Button
+        android:id="@+id/btn_readingmode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="독서모드" />
+    <Button
+        android:id="@+id/btn_takePic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="촬영"/>
+
+    <Button
+        android:id="@+id/btn_voiceRecognize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="음성인식"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:text="시각장애인을 위한 안경 보조기구 어플리케이션"/>
+
+</LinearLayout>
