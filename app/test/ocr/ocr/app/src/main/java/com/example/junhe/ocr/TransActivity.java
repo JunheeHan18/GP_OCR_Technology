@@ -55,8 +55,11 @@ public class TransActivity extends AppCompatActivity implements TextToSpeech.OnI
                 attemptSaveText();
             }
         });
-        content = getIntent().getExtras().getString("content");
-        text.setText(content);
+        if(getIntent().getExtras()!=null) {
+            content = getIntent().getExtras().getString("content");
+            text.setText(content);
+            speakOutNow();
+        }
 
     }
 

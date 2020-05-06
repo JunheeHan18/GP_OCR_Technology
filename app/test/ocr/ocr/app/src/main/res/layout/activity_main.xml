@@ -24,7 +24,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="촬영"/>
-
+    <Button
+        android:id="@+id/btn_searchInpic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="검색"/>
     <Button
         android:id="@+id/btn_voiceRecognize"
         android:layout_width="match_parent"
