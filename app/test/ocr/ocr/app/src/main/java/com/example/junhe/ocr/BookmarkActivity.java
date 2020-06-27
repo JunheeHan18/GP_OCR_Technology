@@ -54,7 +54,7 @@ public class BookmarkActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent=new Intent(BookmarkActivity.this, TransActivity.class);
-                String content = listitem[position].getContent();
+                String content = listitem[listitem.length-position-1].getContent();
                 intent.putExtra("content",content);  //문자열 전달
 
                 startActivity(intent);
@@ -90,12 +90,12 @@ public class BookmarkActivity extends AppCompatActivity {
                         BookmarkResponse[] result = response.body();
                         int idx = result.length;
                         listitem = new ListItem[idx];
-                        for(int i=0;i<idx;i++) {
+                        for(int i=idx-1;i>=0;i--) {
                             listitem[i] = new ListItem(result[i].getTitle(), result[i].getContent(), result[i].getSave_date());
                             adapter.addItem(listitem[i].getTitle(),listitem[i].getContent(),listitem[i].getDate());
                         }
                         adapter.notifyDataSetChanged();
-                       Toast.makeText(getApplicationContext(),listitem[5].getContent(),Toast.LENGTH_SHORT).show();
+//                       Toast.makeText(getApplicationContext(),listitem[5].getContent(),Toast.LENGTH_SHORT).show();
 
                         //initAdapter(listitem);
                         //Toast.makeText(getApplicationContext(),"길이:"+result.length,Toast.LENGTH_SHORT).show();

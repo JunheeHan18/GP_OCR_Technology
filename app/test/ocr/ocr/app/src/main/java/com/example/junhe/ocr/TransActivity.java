@@ -94,7 +94,7 @@ public class TransActivity extends AppCompatActivity implements TextToSpeech.OnI
     private void speakOutNow() {
         String sText = text.getText().toString();
         //tts.setPitch((float) 0.1); //음량
-        tts.setSpeechRate((float) 0.5); //재생속도
+        tts.setSpeechRate((float) 1.0); //재생속도
         tts.speak(sText, TextToSpeech.QUEUE_FLUSH, null);
     }
 

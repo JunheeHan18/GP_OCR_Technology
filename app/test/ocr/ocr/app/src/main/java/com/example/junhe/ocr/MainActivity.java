@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         try {
-            socket_py = IO.socket("http://192.168.219.104:5000"); //라즈베리파이 소켓연결 부분
+            socket_py = IO.socket("http://192.168.219.108:5000"); //라즈베리파이 소켓연결 부분
         }catch (Exception e) {
             e.printStackTrace();
         }
@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_bookmark:
                 Intent intent1 = new Intent(getApplicationContext(),BookmarkActivity.class);
                 startActivity(intent1);
-                break;
+                break;/*
             case R.id.menu_signin:
                 Intent intent2 = new Intent(getApplicationContext(),SigninActivity.class);
                 startActivity(intent2);
@@ -298,7 +298,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_signup:
                 Intent intent3 = new Intent(getApplicationContext(),SignupActivity.class);
                 startActivity(intent3);
-                break;
+                break;*/
 
         }
         return super.onOptionsItemSelected(item);
