@@ -1,18 +1,35 @@
-#OCR Technology Based Visual Aids
+__#OCR Technology Based Visual Aids__
 
-#한국산업기술대학교 컴퓨터공학부 종합설계를 위한 프로젝트
+__#한국산업기술대학교 컴퓨터공학부 종합설계를 위한 프로젝트__
 
 OCR기술 기반의 시각장애인 안경 보조기구
 
+==========================================
+=
 
-#개발목표
+
+__#개발목표__
 
 - OCR 기술 기반의 시각장애인 안경 보조 기구를 개발하여 시각장애인들의 생활 수준 향상
 
+==========================================
+=
 
-#개발단계
 
-1단계
+__#시스템 구조__
+
+![image](https://user-images.githubusercontent.com/50817320/103511096-b9e27e00-4ea9-11eb-9dda-3db96bd895db.png)
+
+__#시나리오(도식화)__
+
+![image](https://user-images.githubusercontent.com/50817320/103511253-03cb6400-4eaa-11eb-9922-e4635cbef168.png)
+
+==========================================
+=
+
+__#개발단계__
+
+__1단계__
 
 ■ OCR 기술 기반 보조 기구와 Application의 개발 및 구현을 위한 조사
 
@@ -24,7 +41,7 @@ OCR기술 기반의 시각장애인 안경 보조기구
 
 - Back-End 기능 수행을 위한 프레임워크를 선정함.
 
-2단계
+__2단계__
 
 ■  OCR기술 기반 보조 기구 개발을 위한 아키텍쳐 설계
 
@@ -34,7 +51,7 @@ OCR기술 기반의 시각장애인 안경 보조기구
 
 - 사용자 데이터 및 변환된 텍스트 저장을 위한 DB서버 및 웹 서버를 구축함.
 
-3단계
+__3단계__
 
 ■ 보조 기구 및 Application 구현
 
@@ -44,7 +61,7 @@ OCR기술 기반의 시각장애인 안경 보조기구
 
 - 프레임워크를 이용한 서버 프로그램을 구현함.
 
-4단계
+__4단계__
 
 ■ Device 및 Application에 대한 테스팅 수행 
 
@@ -52,23 +69,39 @@ OCR기술 기반의 시각장애인 안경 보조기구
 
 - 테스트 시나리오에 대한 통합 테스팅 진행
 
+==========================================
+=
 
+__#모듈 상세설계 _ Device__
 
-#개발환경
+![image](https://user-images.githubusercontent.com/50817320/103511470-74728080-4eaa-11eb-8a3c-157db8a319cf.png)
 
-H/W
+__#모듈 상세설계 _ Server__
+
+![image](https://user-images.githubusercontent.com/50817320/103511695-dd59f880-4eaa-11eb-94c7-41236b523959.png)
+
+__#모듈 상세설계 _ Application__
+
+![image](https://user-images.githubusercontent.com/50817320/103511737-ee0a6e80-4eaa-11eb-86d7-1af67ce4d731.png)
+
+==========================================
+=
+
+__#개발환경__
+
+__H/W__
 
 - 라즈베리파이 제로 W
 
 - 라즈베리파이 카메라 모듈 V2
 
-S/W
+__S/W__
 
 - Python
 
 - AndroidStudio (Java)
 
-Server
+__Server__
 
 - AWS EC2 Server 
 
@@ -80,11 +113,13 @@ Server
 
 - MySQL
 
+==========================================
+=
 
 
-#개발내용
+__#개발내용__
 
-#1
+__#1__
 
 ■ 데이터를 저장할 수 있는 AWS 서버 개발
 
@@ -92,7 +127,7 @@ Server
 
   - 문자화된 자료를 사용자의 의사결정에 의하여 구축한 RDS 서버에 저장함.
 
-#2
+__#2__
 
 ■ Python을 이용한 이미지 전처리 알고리즘 및 모듈 개발
 
@@ -102,13 +137,13 @@ Server
 
  - 사용 환경별 인식 서비스를 제공하기 위해 인식 모드별 문자 인식 알고리즘을 개발함.
 
-#3
+__#3__
 
 ■ 컴포넌트 간 상호작용을 위한 서버 프로그램 개발
 
 - 보조기구 Device와 Application의 상호 통신 중개 역할을 하는 서버의 프로그램을 Node.js에서 JavaScript로 구현함.
 
-#4
+__#4__
 
 ■ 음성인식 서비스(STT & TTS) 제공 App 개발
 
@@ -118,9 +153,62 @@ Server
 
 - 어떤 환경에서 보조기구를 사용할지 설정하는 제어모듈을 개발함.
 
+==========================================
+=
 
+__#프로토타입 상세__
 
-#연구 개발 상세분석
+__##보조기구 케이스(모델링)__
+
+![image](https://user-images.githubusercontent.com/50817320/103511892-2e69ec80-4eab-11eb-8ffb-fb9624ecb48a.png)
+
+__##케이스 출력물__
+
+![image](https://user-images.githubusercontent.com/50817320/103512003-5f4a2180-4eab-11eb-91f3-e7540c3e4922.png)
+
+__##프로토타입 구현물__
+
+![image](https://user-images.githubusercontent.com/50817320/103512088-8143a400-4eab-11eb-9284-44d470e8c55a.png)
+
+==========================================
+=
+
+__#Demo__
+
+__#1__
+
+- AWS Client에서 Node API 서버 구동 후 Application 실행 시, 우선적으로 Server에 소켓 연동
+
+![image](https://user-images.githubusercontent.com/50817320/103512730-a4bb1e80-4eac-11eb-8617-4a9a671c1ce6.png)
+
+__#2__
+
+- 보조기구 부팅 후 OpenCV 및 Camera 모듈 세팅, Application과 소켓 연동
+
+![image](https://user-images.githubusercontent.com/50817320/103512743-a97fd280-4eac-11eb-9760-32d2b0fedcf5.png)
+
+__#3__
+
+- 보조기구를 이용해 인식할 이미지 촬영
+
+![image](https://user-images.githubusercontent.com/50817320/103512750-ac7ac300-4eac-11eb-93b1-5144ba5c6f73.png)
+
+__#4__
+
+- 보조기구에서 촬영된 이미지 인식 후 문자 변환
+
+![image](https://user-images.githubusercontent.com/50817320/103512758-aedd1d00-4eac-11eb-8128-b5dc57536eab.png)
+
+__#5__
+
+- 변환된 문자 App으로 전송 후 음성 출력 및 저장
+
+![image](https://user-images.githubusercontent.com/50817320/103512769-b270a400-4eac-11eb-96c9-26476b5ba869.png)
+
+==========================================
+=
+
+__#연구 개발 상세분석__
 
 #AWS 서버 개발
 
@@ -140,6 +228,7 @@ Server
 - Google 음성 엔진 API를 사용하여 음성인식 및 출력으로 사용자가 제어할 수 있는 음성 모듈을 개발함.
 
 
-
+==========================================
+=
 
 
